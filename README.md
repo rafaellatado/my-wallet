@@ -12,14 +12,15 @@ A API está hospedada em Render e utiliza MongoDB Atlas como banco de dados.
 
 #### Criar Conta
 
-**Endpoint:** `POST /sign-up`
+**Endpoint:** `POST: https://my-wallet-ez4k.onrender.com/sign-up`
 
 **Body:**
 ```json
 {
   "name": "Seu Nome",
   "email": "seu@email.com",
-  "password": "sua_senha"
+  "password": "sua_senha",
+  "confirmedPassword": "sua_senha"
 }
 ```
 
@@ -27,7 +28,7 @@ A API está hospedada em Render e utiliza MongoDB Atlas como banco de dados.
 
 #### Criar Conta
 
-**Endpoint:** `POST /sign-in`
+**Endpoint:** `POST: https://my-wallet-ez4k.onrender.com/sign-in`
 
 **Body:**
 ```json
@@ -46,28 +47,29 @@ A API está hospedada em Render e utiliza MongoDB Atlas como banco de dados.
 
 ### 3. Transações (Requer Token JWT)
 
-Criar transação (Entrada ou Saída)
+### Criar transação (Entrada ou Saída)
 
-Endpoint: POST /transactions
+**Endpoint:** `POST https://my-wallet-ez4k.onrender.com/transactions`
 
-Headers: { Authorization: Bearer JWT_TOKEN }
+**Headers:** `{ Authorization: Bearer JWT_TOKEN }`
 
-Body:
-
+**Body:**
+```json
 {
   "value": 50.75,
   "description": "Almoço",
   "type": "withdraw"  // ou "deposit"
 }
+```
 
-Listar transações do usuário
+### Listar transações do usuário
 
-Endpoint: GET /transactions
+**Endpoint:** `GET /transactions`
 
-Headers: { Authorization: Bearer JWT_TOKEN }
+**Headers:** `{ Authorization: Bearer JWT_TOKEN }`
 
-Resposta:
-
+**Resposta:**
+```json
 [
   {
     "date": "2024-07-22",
@@ -76,59 +78,43 @@ Resposta:
     "type": "withdraw"
   }
 ]
+```
 
-Editar transação
+### Editar transação
 
-Endpoint: PUT /transactions/:id
+**Endpoint:** `PUT /transactions/:id`
 
-Headers: { Authorization: Bearer JWT_TOKEN }
+**Headers:** `{ Authorization: Bearer JWT_TOKEN }`
 
-Body:
-
+**Body:**
+```json
 {
   "value": 45.00,
   "description": "Jantar",
   "type": "withdraw"
 }
+```
 
-Resposta: Status 204 No Content
+**Resposta:** `Status 204 No Content`
 
-Deletar transação
+### Deletar transação
 
-Endpoint: DELETE /transactions/:id
+**Endpoint:** `DELETE /transactions/:id`
 
-Headers: { Authorization: Bearer JWT_TOKEN }
+**Headers:** `{ Authorization: Bearer JWT_TOKEN }`
 
-Resposta: Status 204 No Content
+**Resposta:** `Status 204 No Content`
 
-Tecnologias Utilizadas:
+# Tecnologias Utilizadas:
 
-Node.js com Express.js
+- Node.js com Express.js
 
-MongoDB (MongoDB Atlas)
+- MongoDB (MongoDB Atlas)
 
-JWT para autenticação
+- JWT para autenticação
 
-Joi para validação de dados
+- Joi para validação de dados
 
-Dotenv para variáveis de ambiente
+- Dotenv para variáveis de ambiente
 
-Render para deploy
-
-
-Como Rodar Localmente
-
-Clone o repositório e instale as dependências:
-
-git clone https://github.com/seu-usuario/my-wallet-api.git
-cd my-wallet-api
-npm install 
-
-Configure o arquivo .env:
-
-DATABASE_URL=seu_mongo_uri
-JWT_SECRET=sua_chave_secreta
-
-Inicie o servidor:
-
-npm start
+- Render para deploy
