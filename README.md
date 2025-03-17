@@ -1,5 +1,3 @@
-# https://my-wallet-ez4k.onrender.com
-
 # My Wallet API
 
 The **My Wallet API** is a back-end for financial management, allowing users to register income and expense transactions.
