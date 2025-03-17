@@ -36,6 +36,13 @@ The API is hosted on Render and uses MongoDB Atlas as the database.
 }
 ```
 
+**Response:**
+```json
+{
+  "token": "JWT_TOKEN"
+}
+```
+
 ### 2. Login
 
 #### Create Account
