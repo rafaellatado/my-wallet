@@ -4,6 +4,20 @@
 
 The **My Wallet API** is a back-end for financial management, allowing users to register income and expense transactions.
 
+## Technologies Used:
+
+- Node.js with Express.js
+
+- MongoDB (MongoDB Atlas)
+
+- JWT for authentication
+
+- Joi for data validation
+
+- Dotenv for environment variables
+
+- Render for deploy
+
 ## How to Test the API
 
 The API is hosted on Render and uses MongoDB Atlas as the database.
@@ -104,17 +118,3 @@ The API is hosted on Render and uses MongoDB Atlas as the database.
 **Headers:** `{ Authorization: Bearer JWT_TOKEN }`
 
 **Response:** `Status 204 No Content`
-
-# Technologies Used:
-
-- Node.js with Express.js
-
-- MongoDB (MongoDB Atlas)
-
-- JWT for authentication
-
-- Joi for data validation
-
-- Dotenv for environment variables
-
-- Render for deploy
