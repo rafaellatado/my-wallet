@@ -2,44 +2,49 @@
 
 # My Wallet API
 
-A My Wallet API é um back-end para gerenciamento financeiro, permitindo que usuários registrem transações de entrada e saída de dinheiro.
+A **My Wallet API** é um back-end para gerenciamento financeiro, permitindo que usuários registrem transações de entrada e saída de dinheiro.
 
-Como Testar a API
+## Como Testar a API
 
 A API está hospedada em Render e utiliza MongoDB Atlas como banco de dados.
 
-1. Autenticação
+### 1. Autenticação
 
-Criar conta
+#### Criar Conta
 
-Endpoint: POST /sign-up
+**Endpoint:** `POST /sign-up`
 
-Body:
-
+**Body:**
+```json
 {
   "name": "Seu Nome",
   "email": "seu@email.com",
   "password": "sua_senha"
 }
+```
 
-Fazer login
+### 2. Fazer login
 
-Endpoint: POST /sign-in
+#### Criar Conta
 
-Body:
+**Endpoint:** `POST /sign-in`
 
+**Body:**
+```json
 {
   "email": "seu@email.com",
   "password": "sua_senha"
 }
+```
 
-Resposta:
-
+**Resposta:**
+```json
 {
   "token": "JWT_TOKEN"
 }
+```
 
-2. Transações (Requer Token JWT)
+### 3. Transações (Requer Token JWT)
 
 Criar transação (Entrada ou Saída)
 
