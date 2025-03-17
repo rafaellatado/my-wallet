@@ -2,52 +2,52 @@
 
 # My Wallet API
 
-A **My Wallet API** é um back-end para gerenciamento financeiro, permitindo que usuários registrem transações de entrada e saída de dinheiro.
+The **My Wallet API** is a back-end for financial management, allowing users to register income and expense transactions.
 
-## Como Testar a API
+## How to Test the API
 
-A API está hospedada em Render e utiliza MongoDB Atlas como banco de dados.
+The API is hosted on Render and uses MongoDB Atlas as the database.
 
-### 1. Autenticação
+### 1. Authentication
 
-#### Criar Conta
+#### Create Account
 
 **Endpoint:** `POST: https://my-wallet-ez4k.onrender.com/sign-up`
 
 **Body:**
 ```json
 {
-  "name": "Seu Nome",
-  "email": "seu@email.com",
-  "password": "sua_senha",
-  "confirmedPassword": "sua_senha"
+  "name": "Your Name",
+  "email": "your@email.com",
+  "password": "your_password",
+  "confirmedPassword": "your_password"
 }
 ```
 
-### 2. Fazer login
+### 2. Login
 
-#### Criar Conta
+#### Create Account
 
 **Endpoint:** `POST: https://my-wallet-ez4k.onrender.com/sign-in`
 
 **Body:**
 ```json
 {
-  "email": "seu@email.com",
-  "password": "sua_senha"
+  "email": "your@email.com",
+  "password": "your_password"
 }
 ```
 
-**Resposta:**
+**Response:**
 ```json
 {
   "token": "JWT_TOKEN"
 }
 ```
 
-### 3. Transações (Requer Token JWT)
+### 3. Transactions (Requires JWT Token)
 
-### Criar transação (Entrada ou Saída)
+### Create transaction (Income or Expense)
 
 **Endpoint:** `POST https://my-wallet-ez4k.onrender.com/transactions`
 
@@ -57,32 +57,32 @@ A API está hospedada em Render e utiliza MongoDB Atlas como banco de dados.
 ```json
 {
   "value": 50.75,
-  "description": "Almoço",
-  "type": "withdraw"  // ou "deposit"
+  "description": "Lunch",
+  "type": "withdraw"  // or "deposit"
 }
 ```
 
-### Listar transações do usuário
+### List user's transactions
 
-**Endpoint:** `GET /transactions`
+**Endpoint:** `GET: https://my-wallet-ez4k.onrender.com/transactions`
 
 **Headers:** `{ Authorization: Bearer JWT_TOKEN }`
 
-**Resposta:**
+**Response:**
 ```json
 [
   {
     "date": "2024-07-22",
     "value": 50.75,
-    "description": "Almoço",
+    "description": "Lunch",
     "type": "withdraw"
   }
 ]
 ```
 
-### Editar transação
+### Edit transaction
 
-**Endpoint:** `PUT /transactions/:id`
+**Endpoint:** `PUT: https://my-wallet-ez4k.onrender.com/transactions/:id`
 
 **Headers:** `{ Authorization: Bearer JWT_TOKEN }`
 
@@ -90,31 +90,31 @@ A API está hospedada em Render e utiliza MongoDB Atlas como banco de dados.
 ```json
 {
   "value": 45.00,
-  "description": "Jantar",
+  "description": "Dinner",
   "type": "withdraw"
 }
 ```
 
-**Resposta:** `Status 204 No Content`
+**Response:** `Status 204 No Content`
 
-### Deletar transação
+### Delete transaction
 
-**Endpoint:** `DELETE /transactions/:id`
+**Endpoint:** `DELETE: https://my-wallet-ez4k.onrender.com/transactions/:id`
 
 **Headers:** `{ Authorization: Bearer JWT_TOKEN }`
 
-**Resposta:** `Status 204 No Content`
+**Response:** `Status 204 No Content`
 
-# Tecnologias Utilizadas:
+# Technologies Used:
 
-- Node.js com Express.js
+- Node.js with Express.js
 
 - MongoDB (MongoDB Atlas)
 
-- JWT para autenticação
+- JWT for authentication
 
-- Joi para validação de dados
+- Joi for data validation
 
-- Dotenv para variáveis de ambiente
+- Dotenv for environment variables
 
-- Render para deploy
+- Render for deploy
